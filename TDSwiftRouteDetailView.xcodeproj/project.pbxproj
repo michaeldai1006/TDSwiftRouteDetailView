@@ -12,6 +12,7 @@
 		06E85C6622B015B600EC7B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06E85C6422B015B600EC7B3F /* Main.storyboard */; };
 		06E85C6822B015B800EC7B3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06E85C6722B015B800EC7B3F /* Assets.xcassets */; };
 		06E85C6B22B015B800EC7B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06E85C6922B015B800EC7B3F /* LaunchScreen.storyboard */; };
+		06E85C9322B0490E00EC7B3F /* TDSwiftShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E85C9222B0490E00EC7B3F /* TDSwiftShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		06E85C6722B015B800EC7B3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06E85C6A22B015B800EC7B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06E85C6C22B015B800EC7B3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06E85C9222B0490E00EC7B3F /* TDSwiftShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDSwiftShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,8 @@
 		06E85C5F22B015B600EC7B3F /* TDSwiftRouteDetailView */ = {
 			isa = PBXGroup;
 			children = (
+				06E85C9122B048EC00EC7B3F /* TDSwiftShape */,
+				06E85C7222B0165D00EC7B3F /* TDSwiftRouteDetailView */,
 				06E85C6022B015B600EC7B3F /* AppDelegate.swift */,
 				06E85C6222B015B600EC7B3F /* ViewController.swift */,
 				06E85C6422B015B600EC7B3F /* Main.storyboard */,
@@ -62,6 +66,21 @@
 				06E85C6C22B015B800EC7B3F /* Info.plist */,
 			);
 			path = TDSwiftRouteDetailView;
+			sourceTree = "<group>";
+		};
+		06E85C7222B0165D00EC7B3F /* TDSwiftRouteDetailView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TDSwiftRouteDetailView;
+			sourceTree = "<group>";
+		};
+		06E85C9122B048EC00EC7B3F /* TDSwiftShape */ = {
+			isa = PBXGroup;
+			children = (
+				06E85C9222B0490E00EC7B3F /* TDSwiftShape.swift */,
+			);
+			path = TDSwiftShape;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +156,7 @@
 			files = (
 				06E85C6322B015B600EC7B3F /* ViewController.swift in Sources */,
 				06E85C6122B015B600EC7B3F /* AppDelegate.swift in Sources */,
+				06E85C9322B0490E00EC7B3F /* TDSwiftShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

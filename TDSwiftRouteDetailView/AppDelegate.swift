@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  TDSwiftRouteDetailView
-//
-//  Created by OD5 on 6/11/19.
-//  Copyright © 2019 tdtest. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
