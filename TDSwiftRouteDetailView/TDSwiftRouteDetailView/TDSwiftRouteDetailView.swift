@@ -82,7 +82,7 @@ public class TDSwiftRouteDetailView: UIView {
         lowerAddressBtn.setTitleColor(TDSwiftRouteDetailView.defaultAddressColor, for: .normal)
         lowerAddressBtn.titleLabel?.textAlignment = .left
         lowerAddressBtn.contentHorizontalAlignment = .left
-        upperAddressBtn.addTarget(self, action: #selector(self.addressBtnPressed(sender:)), for: .touchUpInside)
+        lowerAddressBtn.addTarget(self, action: #selector(self.addressBtnPressed(sender:)), for: .touchUpInside)
         
         // Add buttons to view
         self.addSubview(upperAddressBtn)
