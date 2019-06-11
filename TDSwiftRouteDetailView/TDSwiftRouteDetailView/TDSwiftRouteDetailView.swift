@@ -1,7 +1,18 @@
 import Foundation
 import UIKit
 
+enum TDSwiftRouteDetailViewAddressButtonLocation {
+    case upper
+    case lower
+}
+
+protocol TDSwiftRouteDetailViewDelegate: class {
+    func didSelectAddressBtn(atLocation location: TDSwiftRouteDetailViewAddressButtonLocation, button: UIButton)
+}
+
 public class TDSwiftRouteDetailView: UIView {
+    weak var delegate: TDSwiftRouteDetailViewDelegate?
+    
     // Static properties
     static private let defaultLabelFont = UIFont.systemFont(ofSize: 12, weight: .regular)
     static private let defaultAddressFont = UIFont.systemFont(ofSize: 12, weight: .medium)
@@ -61,7 +72,8 @@ public class TDSwiftRouteDetailView: UIView {
         upperAddressBtn.setTitleColor(TDSwiftRouteDetailView.defaultAddressColor, for: .normal)
         upperAddressBtn.titleLabel?.textAlignment = .left
         upperAddressBtn.contentHorizontalAlignment = .left
-
+        upperAddressBtn.addTarget(self, action: #selector(self.addressBtnPressed(sender:)), for: .touchUpInside)
+        
         // Lower button
         let lowerButtonFrame = CGRect(x: 45.0, y: lowerLabel.frame.maxY + 6.0, width: self.frame.width - 45.0 - 25.0, height: 14.0)
         lowerAddressBtn = UIButton(frame: lowerButtonFrame)
@@ -70,6 +82,7 @@ public class TDSwiftRouteDetailView: UIView {
         lowerAddressBtn.setTitleColor(TDSwiftRouteDetailView.defaultAddressColor, for: .normal)
         lowerAddressBtn.titleLabel?.textAlignment = .left
         lowerAddressBtn.contentHorizontalAlignment = .left
+        upperAddressBtn.addTarget(self, action: #selector(self.addressBtnPressed(sender:)), for: .touchUpInside)
         
         // Add buttons to view
         self.addSubview(upperAddressBtn)
@@ -85,5 +98,13 @@ public class TDSwiftRouteDetailView: UIView {
         
         // Dashed line
         TDSwiftShape.drawDashedLine(onView: self, fromPoint: CGPoint(x: upperLabel.frame.minX - 11 - 4.5, y: upperLabel.frame.minY + 7.0 + 5.0 + 6.0), toPoint: CGPoint(x: lowerLabel.frame.minX - 11 - 4.5, y: lowerLabel.frame.minY + 7.0 - 5.0 - 6.0), lineWidth: 3.0, dashLength: 3.0, dashGap: 3.0, lineColor: UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0).cgColor)
+    }
+    
+    @objc private func addressBtnPressed(sender: UIButton) {
+        if sender == upperAddressBtn {
+            delegate?.didSelectAddressBtn(atLocation: .upper, button: sender)
+        } else if sender == lowerAddressBtn {
+            delegate?.didSelectAddressBtn(atLocation: .lower, button: sender)
+        }
     }
 }
