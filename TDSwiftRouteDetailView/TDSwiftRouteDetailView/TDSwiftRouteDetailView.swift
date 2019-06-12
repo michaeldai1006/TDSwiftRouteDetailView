@@ -66,17 +66,20 @@ public class TDSwiftRouteDetailView: UIView {
     private func setupAddressBtns(upperText: String, lowerText: String) {
         // Upper button
         let upperButtonFrame = CGRect(x: 45.0, y: upperLabel.frame.maxY + 6.0, width: self.frame.width - 45.0 - 25.0, height: 14.0)
-        upperAddressBtn = UIButton(frame: upperButtonFrame)
+        upperAddressBtn = UIButton(type: .system)
+        upperAddressBtn.frame = upperButtonFrame
         upperAddressBtn.setTitle(upperText, for: .normal)
         upperAddressBtn.titleLabel?.font = TDSwiftRouteDetailView.defaultAddressFont
         upperAddressBtn.setTitleColor(TDSwiftRouteDetailView.defaultAddressColor, for: .normal)
         upperAddressBtn.titleLabel?.textAlignment = .left
         upperAddressBtn.contentHorizontalAlignment = .left
+        upperAddressBtn.showsTouchWhenHighlighted = true
         upperAddressBtn.addTarget(self, action: #selector(self.addressBtnPressed(sender:)), for: .touchUpInside)
         
         // Lower button
         let lowerButtonFrame = CGRect(x: 45.0, y: lowerLabel.frame.maxY + 6.0, width: self.frame.width - 45.0 - 25.0, height: 14.0)
-        lowerAddressBtn = UIButton(frame: lowerButtonFrame)
+        lowerAddressBtn = UIButton(type: .system)
+        lowerAddressBtn.frame = lowerButtonFrame
         lowerAddressBtn.setTitle(lowerText, for: .normal)
         lowerAddressBtn.titleLabel?.font = TDSwiftRouteDetailView.defaultAddressFont
         lowerAddressBtn.setTitleColor(TDSwiftRouteDetailView.defaultAddressColor, for: .normal)
